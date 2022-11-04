@@ -1,0 +1,238 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: skyblue;
+}
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 5px;
+}
+.nav-entire {
+  position: fixed;
+  width: 100%;
+  background: darkcyan;
+  box-shadow: 0px 6px 13px 1px rgba(239, 23, 210, 0.75);
+  padding: 1rem;
+}
+.nav-entire span {
+  font-size: 3rem;
+  color: rgb(113, 206, 224);
+  text-shadow: -5px 4px 10px rgba(16, 14, 14, 0.6);
+}
+.toggle-btn {
+  color: black;
+  background: transparent;
+  border: none;
+  transition: all 0.75s linear;
+  font-size: 3rem;
+}
+.toggle-btn:hover {
+  transform: rotate(90deg);
+}
+.nav-entire a {
+  text-decoration: none;
+}
+.links a {
+  color: black;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  display: block;
+  padding: 0.3rem 1rem;
+}
+.listCont {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s linear;
+}
+.links a:hover {
+  background: aqua;
+  color: darkmagenta;
+  padding-left: 2rem;
+  transition: all 1s linear;
+}
+
+main h1 {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 5rem;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.mainPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://images.pexels.com/photos/10096370/pexels-photo-10096370.jpeg);
+  background-size: cover;
+}
+
+.mainPage p {
+  max-width: 35em;
+  text-align: center;
+  padding: 1rem 0;
+  color: rgb(244, 58, 210);
+}
+
+.mainPage button {
+  padding: 0.5rem 1rem;
+  background: black;
+  color: aqua;
+}
+
+.about h1 {
+  align-self: center;
+}
+.about {
+  background-image: url(https://images.pexels.com/photos/5427764/pexels-photo-5427764.jpeg?auto=compress&cs=tinysrgb&w=600);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.picDiv {
+  /* inset: 0; */
+  display: grid;
+  gap: 2rem 2rem;
+  padding: 3rem 3rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px 100px 100px;
+  grid-template-areas:
+    "a a b"
+    "a a b"
+    "c c c"
+    "c c c";
+}
+.pic1 {
+  grid-area: a;
+  background-image: url(https://images.pexels.com/photos/1528375/pexels-photo-1528375.jpeg?auto=compress&cs=tinysrgb&w=600);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.pic2 {
+  grid-area: b;
+  background-image: url(https://images.pexels.com/photos/626163/pexels-photo-626163.jpeg?auto=compress&cs=tinysrgb&w=600);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.pic3 {
+  grid-area: c;
+  background-image: url(https://images.pexels.com/photos/5095880/pexels-photo-5095880.jpeg?auto=compress&cs=tinysrgb&w=600);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.services {
+  background-color: darkcyan;
+}
+
+.visit {
+  background-color: aqua;
+}
+
+.footer {
+  display: grid;
+  place-items: center;
+  height: 100px;
+}
+
+.up {
+  visibility: hidden;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.up a {
+  text-decoration: none;
+  background: lightblue;
+  color: black;
+  font-size: 2rem;
+}
+
+.visible {
+  visibility: visible;
+  z-index: 666;
+}
+
+@media screen and (min-width: 576px) {
+  .nav-entire {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.5s;
+  }
+  .nav-entire a {
+    color: white;
+  }
+
+  .nav-entire span {
+    color: black;
+  }
+
+  .nav-down {
+    position: fixed;
+    background: white;
+    color: darkcyan;
+  }
+
+  .nav-down a {
+    color: darkcyan;
+  }
+
+  .toggle-btn {
+    display: none;
+  }
+
+  .listCont {
+    height: auto !important;
+  }
+
+  .links {
+    display: flex;
+    list-style: none;
+    font-size: 2rem;
+  }
+  .links a {
+    padding: 0;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    transition: 1s;
+  }
+  .links a:hover {
+    padding-top: 1rem;
+    background: transparent;
+    text-shadow: -19px 14px 10px rgba(16, 14, 14, 0.6);
+    font-size: 2rem;
+  }
+}
